@@ -1,0 +1,249 @@
+$inter: 'Inter', sans-serif;
+$ruberoid: 'Ruberoid', sans-serif;
+
+$black: #212121;
+$blue: #064077;
+$light-blue: #279DD9;
+$background-blue: #EEF4FC;
+$gray: #E6E6E6;
+$white: #FFFFFF;
+
+@import "reset";
+@import "fonts";
+@import "mixins";
+@import "hamburger";
+@import "swiper-bundle";
+@import "magnific-popup";
+@import "sal";
+
+@import "style-header";
+@import "style-footer";
+@import "style-home";
+@import "style-news";
+@import "style-404";
+@import "style-default";
+
+.container {
+  max-width: 1210px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container-default {
+  max-width: 610px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+html {
+  background-color: $white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  &.no-scroll {
+    overflow: hidden;
+  }
+  * {
+    font-family: $inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $black;
+    font-feature-settings: "lnum";
+    transition: all 0.4s ease-in-out;
+  }
+  a {
+    text-decoration: unset;
+  }
+  body::-webkit-scrollbar {
+    width: 15px;
+  }
+  body::-webkit-scrollbar-track {
+    background: $white;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border-radius: 7px;
+    border: 3px solid $white;
+  }
+  body {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: $blue $white;
+  }
+  .default-button {
+    padding: 15px 25px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: $white;
+    background-color: $light-blue;
+    border: 2px solid $light-blue;
+    border-radius: 70px;
+    @include hover {
+      color: $light-blue;
+      background-color: #EEF4FC;
+    }
+  }
+  .more-button {
+    padding: 15px 25px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: $white;
+    background-color: $blue;
+    border: 2px solid $blue;
+    border-radius: 70px;
+    @include hover {
+      color: $blue;
+      background-color: rgba(6, 64, 119, 0.20);
+    }
+  }
+}
+
+.mfp-content {
+  width: unset !important;
+  .popup__sent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 580px;
+    height: 280px;
+    background-color: $white;
+    border-radius: 20px;
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+    }
+    .sent__closed {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      svg {
+        path {
+          opacity: 1;
+        }
+      }
+      @include hover {
+        svg {
+          path {
+            opacity: 0.65;
+          }
+        }
+      }
+    }
+    .sent__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .info__title {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 110%;
+      }
+      .info__description {
+        max-width: 440px;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .popup__failed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 580px;
+    height: 280px;
+    background-color: $white;
+    border-radius: 20px;
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+    }
+    .failed__closed {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      svg {
+        path {
+          opacity: 1;
+        }
+      }
+      @include hover {
+        svg {
+          path {
+            opacity: 0.65;
+          }
+        }
+      }
+    }
+    .failed__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .info__title {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 110%;
+      }
+      .info__description {
+        max-width: 440px;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+  @include horizontal-mobile {
+    .popup__sent {
+      width: 345px;
+      height: 265px;
+      .sent__info {
+        .info__title {
+          font-size: 24px;
+        }
+        .info__description {
+          max-width: 270px;
+          font-size: 14px;
+        }
+      }
+    }
+    .popup__failed {
+      width: 345px;
+      height: 265px;
+      .failed__info {
+        .info__title {
+          font-size: 24px;
+        }
+        .info__description {
+          max-width: 270px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
